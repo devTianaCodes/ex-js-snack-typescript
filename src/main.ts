@@ -19,7 +19,18 @@
 
 let dato: unknown;
 
-if (typeof dato === "string") {
+if (dato === null) {
+  console.log("Il dato è vuoto");
+
+} else if (Array.isArray(dato)) {
+  console.log(dato.length);
+
+} else if (dato instanceof Promise) {
+  dato.then((valore) => {
+    console.log(valore);
+  });
+
+} else if (typeof dato === "string") {
   console.log(dato.toUpperCase());
 
 } else if (typeof dato === "number") {
@@ -27,7 +38,7 @@ if (typeof dato === "string") {
 
 } else if (typeof dato === "boolean") {
   console.log(dato ? "Sì" : "No");
-  
+
 } else {
   console.log("Tipo non supportato");
 }
