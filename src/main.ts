@@ -1,45 +1,33 @@
-import "./style.css";
+// 🏆 Snack 1
 
-type Snack = {
-  id: number;
-  title: string;
-  completed: boolean;
-};
+// Hai ricevuto un dato generico da un'API, ma non sai di che tipo sia… Il tuo compito è controllare il tipo del dato e stampare il valore in modo corretto.
 
-const snacks: Snack[] = [
-  {
-    id: 1,
-    title: "Configura il progetto TypeScript",
-    completed: true
-  },
-  {
-    id: 2,
-    title: "Scrivi il primo esercizio tipizzato",
-    completed: false
-  }
-];
+//     Se è una stringa: stampala in maiuscolo
 
-const app = document.querySelector<HTMLDivElement>("#app");
+//     Se è un numero: moltiplicalo per due e stampalo
 
-if (!app) {
-  throw new Error("Elemento #app non trovato");
+//     Se è un booleano: stampa “Sì” o “No” in base al suo valore
+
+//     In tutti gli altri casi: stampa “Tipo non supportato”
+
+// 🎯 BONUS
+
+//     Se è null: stampa “Il dato è vuoto”
+//     Se è un array: stampa la sua lunghezza
+//     Se è una Promise: attendi che si risolva e stampa il valore del resolve.
+
+
+let dato: unknown;
+
+if (typeof dato === "string") {
+  console.log(dato.toUpperCase());
+
+} else if (typeof dato === "number") {
+  console.log(dato * 2);
+
+} else if (typeof dato === "boolean") {
+  console.log(dato ? "Sì" : "No");
+  
+} else {
+  console.log("Tipo non supportato");
 }
-
-app.innerHTML = `
-  <section class="page">
-    <p class="eyebrow">Vite + TypeScript</p>
-    <h1>JS Snack TypeScript</h1>
-    <ul>
-      ${snacks
-        .map(
-          (snack) => `
-            <li>
-              <span>${snack.title}</span>
-              <strong>${snack.completed ? "Pronto" : "Da fare"}</strong>
-            </li>
-          `
-        )
-        .join("")}
-    </ul>
-  </section>
-`;
