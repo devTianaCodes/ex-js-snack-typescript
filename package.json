@@ -1,0 +1,26 @@
+{
+  "name": "ex-js-snack-typescript",
+  "private": false,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Esercizi JavaScript riscritti con TypeScript in un progetto Vite.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b"
+  },
+  "keywords": [
+    "typescript",
+    "vite",
+    "javascript",
+    "exercises"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1"
+  }
+}
