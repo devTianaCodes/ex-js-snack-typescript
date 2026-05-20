@@ -54,12 +54,19 @@ if (dato === null) {
 //     sesso → Può essere solo "m" o "f".
 //     anniDiServizio → array di numeri, es. [2014, 2015, 2017, 2018]
 
+// 🎯 BONUS
+
+//     emailAziendale → Email assegnata al dipendente (non si può modificare)
+//     contratto → Specifica il tipo di contratto del dipendente, con valori limitati a “indeterminato”, “determinato” o “freelance”.
+
 type Dipendente = {
   nome: string;
   cognome: string;
   annoNascita: number;
   sesso: "m" | "f";
   anniDiServizio: number[];
+  readonly emailAziendale: string;
+  contratto: "indeterminato" | "determinato" | "freelance";
 };
 
 const dipendente: Dipendente = {
@@ -68,6 +75,8 @@ const dipendente: Dipendente = {
   annoNascita: 1990,
   sesso: "m",
   anniDiServizio: [2014, 2015, 2017, 2018],
+  emailAziendale: "mario.rossi@azienda.it",
+  contratto: "indeterminato",
 };
 
 console.log(dipendente);
