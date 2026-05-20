@@ -80,3 +80,57 @@ const dipendente: Dipendente = {
 };
 
 console.log(dipendente);
+
+
+// 🏆 Snack 3
+
+// Estendiamo Dipendente per definire due ruoli specifici all'interno dell'azienda:
+
+//     Developer
+//         livelloEsperienza → Il livello di esperienza del developer (le scelte possibili sono solo “Junior”, “Mid” o “Senior”).
+//         linguaggi → Un array contenente i linguaggi di programmazione utilizzati dal developer in azienda (opzionale, perché i neo assunti non hanno ancora dei linguaggi assegnati).
+//         certificazioni → Un array di stringhe contenente certificazioni tecniche ottenute dal developer (può essere vuoto).
+
+//     ProjectManager
+//         teamSize → Il numero di persone nel team gestito dal Project Manager (può essere null se non ha ancora un team assegnato).
+//         budgetGestito → Il totale del budget annuale gestito dal PM (opzionale).
+//         stakeholderPrincipali → Un array di stringhe con i nomi dei principali stakeholder con cui il PM collabora (può essere vuoto).
+
+type Developer = Dipendente & {
+  livelloEsperienza: "Junior" | "Mid" | "Senior";
+  linguaggi?: string[];
+  certificazioni: string[];
+};
+
+type ProjectManager = Dipendente & {
+  teamSize: number | null;
+  budgetGestito?: number;
+  stakeholderPrincipali: string[];
+};
+
+const developer: Developer = {
+  nome: "Giulia",
+  cognome: "Bianchi",
+  annoNascita: 1998,
+  sesso: "f",
+  anniDiServizio: [2024],
+  emailAziendale: "giulia.bianchi@azienda.it",
+  contratto: "determinato",
+  livelloEsperienza: "Junior",
+  certificazioni: [],
+};
+
+const projectManager: ProjectManager = {
+  nome: "Laura",
+  cognome: "Verdi",
+  annoNascita: 1985,
+  sesso: "f",
+  anniDiServizio: [2015, 2016, 2017, 2018],
+  emailAziendale: "laura.verdi@azienda.it",
+  contratto: "indeterminato",
+  teamSize: null,
+  stakeholderPrincipali: [],
+};
+
+console.log(developer);
+console.log(projectManager);
